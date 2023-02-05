@@ -33,8 +33,9 @@ function draw() {
   
   textSize(50)
   text(waterCollected,width/2,height/2-200)
-  image(millenniumImg,width/2-70,200,width/4,height/6)
-
+  image(millenniumImg,width/2-240,20,width/4,height/6)
+  image(iniImg,width/2-200,170,width/4,height/10)
+  image(innovationImg,width/2-240,height-100,width/4,height/10)
   if(mousePressedOver(box)){
        
       writeWater(waterCollected+1)
