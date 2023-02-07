@@ -5,7 +5,7 @@ var bgImg, buttonImg, millenniumImg, iniImg,innovationImg
 
 
 function preload(){
-bgImg = loadImage("assets/bg.png")
+bgImg = loadImage("assets/bgActual.png")
 buttonImg = loadImage("assets/button.png")
 iniImg = loadImage("assets/ini.png")
 millenniumImg = loadImage("assets/Millennium.png")
@@ -16,7 +16,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   
   database = firebase.database();
-  box = createSprite(width / 2, height / 2, 200, 200);
+  
+  box = createSprite(width / 2, height / 2+50, 200, 200);
   box.addImage(buttonImg)
   box.scale = 0.5
   box.shapeColor = "black"
@@ -28,14 +29,14 @@ function setup() {
 
 function draw() {
   background(bgImg);
-  if(waterCollected){
+  if(waterCollected !==undefined){
     
   
   textSize(50)
-  text(waterCollected,width/2,height/2-200)
-  image(millenniumImg,width/2-240,20,width/4,height/6)
-  image(iniImg,width/2-200,170,width/4,height/10)
-  image(innovationImg,width/2-240,height-100,width/4,height/10)
+  text(waterCollected,width/2-30,height/2-40)
+  textSize(40)
+  text("185 litres",width/2+180,height/2-100)
+  
   if(mousePressedOver(box)){
        
       writeWater(waterCollected+1)
